@@ -22,7 +22,7 @@ export default function SignIn() {
             },
             body: JSON.stringify(formData)
         }
-        console.log(settings)
+        //console.log(settings)
         try {
             const fetchResponse = await fetch(`http://localhost:8000/api/users/auth/signin`, settings);
             const data = await fetchResponse.json();

@@ -12,7 +12,6 @@ export default function SignUp() {
             ...prevData,
             [event.target.name]: event.target.value
         }))
-        console.log(typeof formData.password)
     }
 
     const handleSubmit = async (event) => {
@@ -28,11 +27,11 @@ export default function SignUp() {
                 },
                 body: JSON.stringify(formData)
             }
-            console.log(settings)
+            //console.log(settings)
             try {
                 const fetchResponse = await fetch(`http://localhost:8000/api/users/auth/register`, settings);
                 const data = await fetchResponse.json();
-                return data;
+                console.log(data);
             } catch (e) {
                 return e;
             }
